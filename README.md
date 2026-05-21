@@ -72,11 +72,13 @@ Affiliate items should use `type: "affiliate"` so the disclosure appears in the 
 1. Push the repository to GitHub.
 2. In GitHub, open repository settings.
 3. Go to **Pages**.
-4. Set the source to **GitHub Actions**.
+4. Set **Build and deployment > Source** to **GitHub Actions**.
 5. Push to `main` or run the `Deploy to GitHub Pages` workflow manually.
 6. Test the live site on desktop and mobile.
 
 The workflow builds the Astro project and publishes the generated `dist` artifact.
+
+Do not use **Deploy from a branch** for this Astro version. The repository root does not contain the generated `index.html`; Astro creates it in `dist` during the GitHub Actions build.
 
 ## Process Notes
 

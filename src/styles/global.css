@@ -88,7 +88,7 @@ a {
   padding: clamp(4rem, 10vw, 8rem) clamp(1rem, 4vw, 3rem) clamp(2rem, 5vw, 4rem);
   background:
     linear-gradient(180deg, rgba(247, 243, 238, 0.38), rgba(247, 243, 238, 0.98)),
-    url("/assets/hero.png") center / cover no-repeat;
+    var(--hero-image) center / cover no-repeat;
   border-bottom: 1px solid var(--line);
 }
 

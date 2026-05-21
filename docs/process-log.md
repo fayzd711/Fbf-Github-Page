@@ -92,6 +92,23 @@ Expected workflow:
 
 GitHub Pages should be configured to use **GitHub Actions** as the source.
 
+The repo is a project site served at:
+
+```txt
+https://fayzd711.github.io/Fbf-Github-Page/
+```
+
+Astro is configured with:
+
+```txt
+site: https://fayzd711.github.io
+base: /Fbf-Github-Page
+```
+
+This is required so scripts, icons, and gallery images resolve under the project path instead of the account root.
+
+Do not use **Deploy from a branch** for the Astro version. The repo root does not contain the final generated `index.html`; GitHub Actions must build and publish `dist`.
+
 ## Validation Performed
 
 Confirmed with PowerShell:

@@ -5,8 +5,16 @@ import "../styles/global.css";
 const siteTitle = "Found by Fay";
 const siteDescription =
   "Found by Fay is an endless-scroll editorial gallery for aesthetic finds, art references, notes, and affiliate-linked discoveries.";
-const canonicalUrl = "https://example.com/";
-const serializedItems = JSON.stringify(galleryItems);
+const canonicalUrl = "https://fayzd711.github.io/Fbf-Github-Page/";
+const basePath = import.meta.env.BASE_URL;
+const withBase = (path: string) => (path ? `${basePath}${path.replace(/^\//, "")}` : "");
+const heroImage = withBase("/assets/hero.png");
+const serializedItems = JSON.stringify(
+  galleryItems.map((item) => ({
+    ...item,
+    image: withBase(item.image),
+  })),
+);
 ---
 
 <!doctype html>
@@ -19,11 +27,11 @@ const serializedItems = JSON.stringify(galleryItems);
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content="A visual archive of aesthetic images, references, notes, and discoveries." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/assets/hero.png" />
+    <meta property="og:image" content={`${canonicalUrl}assets/hero.png`} />
     <link rel="canonical" href={canonicalUrl} />
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={withBase("/assets/favicon.svg")} type="image/svg+xml" />
     <script id="gallery-data" type="application/json" set:html={serializedItems} />
-    <script src="/scripts/gallery.js" defer></script>
+    <script src={withBase("/scripts/gallery.js")} defer></script>
     <title>{siteTitle}</title>
   </head>
   <body>
@@ -33,7 +41,7 @@ const serializedItems = JSON.stringify(galleryItems);
     </header>
 
     <main id="top">
-      <section class="intro" aria-labelledby="page-title">
+      <section class="intro" aria-labelledby="page-title" style={`--hero-image: url("${heroImage}")`}>
         <p class="kicker">Editorial visual archive</p>
         <h1 id="page-title">Found by Fay</h1>
         <p>
