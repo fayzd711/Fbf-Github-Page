@@ -206,6 +206,17 @@ Deployment note:
 - Those files were copied into `public/assets/gallery`.
 - `src/data/gallery.json` now contains 8 image cards and no note placeholder.
 
+## 2026-05-22 - Pinterest Reference Adjustment
+
+After comparing the live/local page against the user's Pinterest reference, the feed was tightened again:
+
+- Removed the hero-style explanatory experience entirely.
+- Kept `Found by Fay` as an accessible hidden page title instead of a visible hero headline.
+- Added a compact Pinterest-like header with a profile pill and light utility buttons.
+- Added a horizontal topic strip with `All`, `Mood`, `Wardrobe`, `Accessories`, `Interior Design`, `Exterior Design`, `Silhouettes`, `Celebrations`, and `Store Concepts`.
+- Hid the gallery heading visually so the images start immediately below the topic strip.
+- Increased card radius and simplified the masonry spacing to better match the reference.
+
 ## Skill Created
 
 A local Codex skill was created for this website:

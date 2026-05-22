@@ -36,17 +36,47 @@ const serializedItems = JSON.stringify(
   </head>
   <body>
     <header class="site-header">
-      <a class="wordmark" href="#top" aria-label="Found by Fay home">Found by Fay</a>
+      <div class="header-main">
+        <a class="brand-mark" href="#top" aria-label="Found by Fay home">F</a>
+        <a class="home-link" href="#top">Home feed</a>
+        <button class="menu-button" type="button" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <a class="profile-pill" href="#top" aria-label="Found by Fay profile">
+        <span class="profile-avatar" aria-hidden="true">F</span>
+        <span>found by fay</span>
+      </a>
+
+      <div class="header-actions" aria-label="Gallery tools">
+        <button type="button" aria-label="Search"></button>
+        <button type="button" aria-label="Notifications"></button>
+        <button type="button" aria-label="Messages"></button>
+      </div>
     </header>
 
     <main id="top">
       <section class="intro" aria-labelledby="page-title">
         <h1 id="page-title">Found by Fay</h1>
+        <nav class="topic-nav" aria-label="Gallery categories">
+          <a href="#top" aria-current="page">All</a>
+          <a href="#top">Mood</a>
+          <a href="#top">Wardrobe</a>
+          <a href="#top">Accessories</a>
+          <a href="#top">Interior Design</a>
+          <a href="#top">Exterior Design</a>
+          <a href="#top">Silhouettes</a>
+          <a href="#top">Celebrations</a>
+          <a href="#top">Store Concepts</a>
+        </nav>
       </section>
 
       <section class="gallery-shell" aria-labelledby="gallery-title">
         <div class="gallery-heading">
-          <h2 id="gallery-title">Archive</h2>
+          <h2 id="gallery-title">All</h2>
           <p id="gallery-count" aria-live="polite">Loading gallery.</p>
         </div>
         <div class="masonry" id="gallery" aria-live="polite"></div>
