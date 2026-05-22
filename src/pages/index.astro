@@ -4,11 +4,11 @@ import "../styles/global.css";
 
 const siteTitle = "Found by Fay";
 const siteDescription =
-  "Found by Fay is an endless-scroll editorial gallery for aesthetic finds, art references, notes, and affiliate-linked discoveries.";
+  "Found by Fay is a visual archive of aesthetic finds, references, and notes.";
 const canonicalUrl = "https://fayzd711.github.io/Fbf-Github-Page/";
 const basePath = import.meta.env.BASE_URL;
-const withBase = (path: string) => (path ? `${basePath}${path.replace(/^\//, "")}` : "");
-const heroImage = withBase("/assets/hero.png");
+const normalizedBasePath = basePath.endsWith("/") ? basePath : `${basePath}/`;
+const withBase = (path: string) => (path ? `${normalizedBasePath}${path.replace(/^\//, "")}` : "");
 const serializedItems = JSON.stringify(
   galleryItems.map((item) => ({
     ...item,
@@ -25,7 +25,7 @@ const serializedItems = JSON.stringify(
     <meta name="description" content={siteDescription} />
     <meta name="theme-color" content="#f7f3ee" />
     <meta property="og:title" content={siteTitle} />
-    <meta property="og:description" content="A visual archive of aesthetic images, references, notes, and discoveries." />
+    <meta property="og:description" content="A quiet visual archive of finds and references." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content={`${canonicalUrl}assets/hero.png`} />
     <link rel="canonical" href={canonicalUrl} />
@@ -37,22 +37,16 @@ const serializedItems = JSON.stringify(
   <body>
     <header class="site-header">
       <a class="wordmark" href="#top" aria-label="Found by Fay home">Found by Fay</a>
-      <p class="tagline">Visual notes, artful finds, and links worth saving.</p>
     </header>
 
     <main id="top">
-      <section class="intro" aria-labelledby="page-title" style={`--hero-image: url("${heroImage}")`}>
-        <p class="kicker">Editorial visual archive</p>
+      <section class="intro" aria-labelledby="page-title">
         <h1 id="page-title">Found by Fay</h1>
-        <p>
-          A scrolling collection of interiors, objects, textures, art references,
-          and tiny notes. Some discoveries may include affiliate links.
-        </p>
       </section>
 
       <section class="gallery-shell" aria-labelledby="gallery-title">
         <div class="gallery-heading">
-          <h2 id="gallery-title">Latest Finds</h2>
+          <h2 id="gallery-title">Archive</h2>
           <p id="gallery-count" aria-live="polite">Loading gallery.</p>
         </div>
         <div class="masonry" id="gallery" aria-live="polite"></div>

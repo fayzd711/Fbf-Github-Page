@@ -31,6 +31,9 @@ function createImage(item) {
   image.alt = item.alt || "";
   image.loading = visibleCount < batchSize ? "eager" : "lazy";
   image.decoding = "async";
+  image.addEventListener("error", () => {
+    image.remove();
+  });
 
   if (item.aspectRatio) {
     image.style.setProperty("--ratio", item.aspectRatio);
@@ -55,6 +58,8 @@ function createCard(item) {
 
   if (item.image) {
     card.append(createImage(item));
+    card.dataset.missingLabel = item.title || normalizeType(item.type);
+    card.classList.add("missing-image");
   }
 
   const shouldShowCopy = item.title || item.caption || item.type || item.ctaLabel;
@@ -89,6 +94,11 @@ function createCard(item) {
 
     card.append(copy);
   }
+
+  card.querySelector("img")?.addEventListener("load", () => {
+    card.classList.remove("missing-image");
+    card.removeAttribute("data-missing-label");
+  });
 
   if (!item.title && item.alt) {
     card.setAttribute("aria-label", item.alt);

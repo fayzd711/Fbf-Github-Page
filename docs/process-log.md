@@ -140,6 +140,72 @@ The GitHub connector returned 404 for `fayzd711/Fbf-Github-Page`, while it could
 
 Until local Git or connector access to the correct repository is available, deployment cannot be completed from this environment.
 
+## 2026-05-21 - First Successful GitHub Actions Deploy
+
+Chrome was used with the logged-in GitHub session to inspect and fix deployment.
+
+Findings:
+
+- GitHub Pages was correctly switched to **GitHub Actions**.
+- Workflow run `astro conversion` failed because `actions/setup-node` had `cache: npm` but there was no `package-lock.json`.
+- The workflow was edited in GitHub to remove the `cache: npm` setting.
+- The next workflow run succeeded and deployed to:
+
+```txt
+https://fayzd711.github.io/Fbf-Github-Page/
+```
+
+Follow-up fix:
+
+- The first successful deploy loaded the Astro page but not the gallery script because asset paths were missing a slash after the project base path.
+- `src/pages/index.astro` was updated to normalize `import.meta.env.BASE_URL` before prefixing scripts and gallery image paths.
+- The follow-up deploy succeeded.
+
+Verification:
+
+- The GitHub Actions run for `Normalize base path handling in index.astro` completed with `Status: Success`.
+- A cache-busted request to `https://fayzd711.github.io/Fbf-Github-Page/?v=4e2cabd` rendered the gallery with 6 initial cards and `6 of 10 finds shown`.
+- A plain Chrome tab may still show the old bad script URL until the browser cache is refreshed.
+
+## 2026-05-22 - Pinterest-Style Feed Rework
+
+Direction:
+
+- Make the page feel closer to Pinterest.
+- Remove most explanatory copy.
+- Let the images speak.
+- Keep the experience simple, clean, image-first, and one-page.
+
+Local changes:
+
+- Reduced `src/pages/index.astro` to a minimal header and gallery shell.
+- Replaced the large explanatory hero with a visually hidden page title.
+- Changed the visible gallery heading to `Archive`.
+- Reworked `src/styles/global.css` for a denser 5-column masonry feed on desktop, quiet typography, no visible card copy for image cards, and minimal hover states.
+- Kept note cards available as occasional pacing cards.
+- Updated `src/data/gallery.json` with the first image batch the user provided.
+- Added `public/assets/gallery/.gitkeep` so the gallery image folder exists in the repo.
+- Added missing-image fallback behavior in `public/scripts/gallery.js` so absent image files show a quiet placeholder instead of a broken image.
+
+Image files added:
+
+```txt
+public/assets/gallery/turquoise-chanel-bag.jpg
+public/assets/gallery/stoned-marble-page.jpg
+public/assets/gallery/garden-bar.jpg
+public/assets/gallery/yellow-plaid-mini.jpg
+public/assets/gallery/blue-stone-jewelry.jpg
+public/assets/gallery/terrazzo-floor.jpg
+public/assets/gallery/chartreuse-croc-bag.jpg
+public/assets/gallery/painted-hall-reflection.jpg
+```
+
+Deployment note:
+
+- The user provided actual local JPG files under `C:\Users\fayth\Desktop\Shortcuts\Fbf\github images`.
+- Those files were copied into `public/assets/gallery`.
+- `src/data/gallery.json` now contains 8 image cards and no note placeholder.
+
 ## Skill Created
 
 A local Codex skill was created for this website:
