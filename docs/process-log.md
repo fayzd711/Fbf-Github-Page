@@ -217,6 +217,33 @@ After comparing the live/local page against the user's Pinterest reference, the 
 - Hid the gallery heading visually so the images start immediately below the topic strip.
 - Increased card radius and simplified the masonry spacing to better match the reference.
 
+## 2026-05-22 - Logo Header Update
+
+The user provided a white Found by Fay PNG logo. It was added to:
+
+```txt
+public/assets/found-by-fay-logo-white.png
+```
+
+Header changes:
+
+- Replaced the red circular `F` mark with the supplied white logo image.
+- Changed the sticky header background to `#252525`.
+- Kept the profile pill and utility controls white-on-black.
+- Removed encoded text-symbol icons from CSS and replaced them with simple CSS-drawn controls.
+
+## 2026-05-23 - Artwork Header Simplification
+
+The user wanted the page to feel less like Pinterest and more branded/editorial.
+
+Changes:
+
+- Added the supplied artwork/logo banner to `public/assets/found-by-fay-header.jpg`.
+- Replaced the black utility header with a single sticky full-width artwork image link.
+- Kept the header height at `4.25rem`.
+- Removed the horizontal category navigation from the top of the page.
+- Kept the gallery image-first and directly below the sticky header.
+
 ## Skill Created
 
 A local Codex skill was created for this website:
