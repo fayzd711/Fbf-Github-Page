@@ -1,6 +1,7 @@
 :root {
   color-scheme: light;
   --ink: #111;
+  --gold: #c4a35a;
   --muted: #666;
   --paper: #fff;
   --line: rgba(17, 17, 17, 0.12);
@@ -54,18 +55,32 @@ button {
 }
 
 .header-art {
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   text-decoration: none;
 }
 
-.header-art img {
+.header-background {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.header-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(8.5rem, 18vw, 13rem);
+  height: auto;
+  max-height: 54%;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 1px 8px rgba(0, 0, 0, 0.28));
 }
 
 .intro {
@@ -111,7 +126,7 @@ p {
   width: 100%;
   display: inline-block;
   margin: 0 0 1rem;
-  padding: 0;
+  padding: 2px;
   overflow: hidden;
   color: var(--ink);
   background: #e8e8e8;
@@ -121,6 +136,10 @@ p {
   text-align: left;
   break-inside: avoid;
   cursor: zoom-in;
+  transition:
+    background 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
 .gallery-card::after {
@@ -136,6 +155,12 @@ p {
   background: rgba(0, 0, 0, 0.08);
 }
 
+.gallery-card:hover {
+  background: var(--gold);
+  box-shadow: 0 8px 24px rgba(196, 163, 90, 0.32);
+  transform: translateY(-1px);
+}
+
 .gallery-card img,
 .modal-media img {
   display: block;
@@ -146,6 +171,7 @@ p {
 
 .gallery-card img {
   aspect-ratio: var(--ratio, auto);
+  border-radius: 12px;
   object-fit: cover;
 }
 

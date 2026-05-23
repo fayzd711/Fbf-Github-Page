@@ -244,6 +244,18 @@ Changes:
 - Removed the horizontal category navigation from the top of the page.
 - Kept the gallery image-first and directly below the sticky header.
 
+## 2026-05-23 - Marbled Header and Gold Hover
+
+The user supplied a plain marbled background without the logo and wanted the previous white logo smaller and centered on top.
+
+Changes:
+
+- Added `public/assets/hand-marbled-header.png`.
+- Kept `public/assets/found-by-fay-logo-white.png` as the centered overlay logo.
+- Updated the sticky header to layer the logo over the marbled background.
+- Reduced the logo sizing with responsive `clamp()` constraints.
+- Added a gold hover frame and subtle lift for gallery cards using `#c4a35a`.
+
 ## Skill Created
 
 A local Codex skill was created for this website:

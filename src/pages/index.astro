@@ -9,7 +9,8 @@ const canonicalUrl = "https://fayzd711.github.io/Fbf-Github-Page/";
 const basePath = import.meta.env.BASE_URL;
 const normalizedBasePath = basePath.endsWith("/") ? basePath : `${basePath}/`;
 const withBase = (path: string) => (path ? `${normalizedBasePath}${path.replace(/^\//, "")}` : "");
-const headerImageUrl = withBase("/assets/found-by-fay-header.jpg");
+const headerImageUrl = withBase("/assets/hand-marbled-header.png");
+const logoUrl = withBase("/assets/found-by-fay-logo-white.png");
 const serializedItems = JSON.stringify(
   galleryItems.map((item) => ({
     ...item,
@@ -38,7 +39,8 @@ const serializedItems = JSON.stringify(
   <body>
     <header class="site-header">
       <a class="header-art" href="#top" aria-label="Found by Fay home">
-        <img src={headerImageUrl} alt="Found by Fay" />
+        <img class="header-background" src={headerImageUrl} alt="" aria-hidden="true" />
+        <img class="header-logo" src={logoUrl} alt="Found by Fay" />
       </a>
     </header>
 
