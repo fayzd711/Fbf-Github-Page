@@ -294,6 +294,17 @@ Changes:
 - Added small uppercase editorial side labels and thin gold hairlines around the centered wordmark.
 - Left the gallery, image hover treatment, and page content unchanged.
 
+## 2026-06-02 - Bradley Gather-Inspired Brand Pass
+
+The user asked to mix the simple/fun editorial feel of `bradleyagather.com` with Found by Fay branding, while preserving the digital gallery and gold hover outline.
+
+Changes:
+
+- Rebuilt the top area as an editorial masthead with small text nav, centered logo, and a black ticker strip.
+- Added a playful editorial intro strip above the gallery using the existing marbled asset, colorful accent bar, and "Found by Fay's edit" language.
+- Preserved the existing masonry gallery structure and the thicker gold hover frame.
+- Kept the site one-page and image-led.
+
 ## Skill Created
 
 A local Codex skill was created for this website:

@@ -38,19 +38,47 @@ const serializedItems = JSON.stringify(
   </head>
   <body>
     <header class="site-header">
-      <a class="header-art" href="#top" aria-label="Found by Fay home">
-        <img class="header-background" src={headerImageUrl} alt="" aria-hidden="true" />
-        <span class="masthead-kicker" aria-hidden="true">Visual archive</span>
-        <span class="masthead-volume" aria-hidden="true">Est. 2026</span>
-        <span class="header-lockup" aria-hidden="true">
+      <div class="header-row">
+        <nav class="header-nav header-nav-left" aria-label="Primary">
+          <a href="#gallery-title">Latest</a>
+          <a href="#gallery-title">Looks</a>
+          <a href="#gallery-title">Interiors</a>
+        </nav>
+        <a class="masthead-logo" href="#top" aria-label="Found by Fay home">
           <img class="header-logo" src={logoUrl} alt="Found by Fay" />
-        </span>
-      </a>
+        </a>
+        <nav class="header-nav header-nav-right" aria-label="Secondary">
+          <a href="#gallery-title">Archive</a>
+          <a href="#gallery-title">Notes</a>
+          <a href="#gallery-title">Instagram</a>
+        </nav>
+      </div>
+      <div class="header-ticker" aria-hidden="true">
+        <span>Style</span>
+        <span>Objects</span>
+        <span>Rooms</span>
+        <span>Textures</span>
+        <span>Color</span>
+      </div>
     </header>
 
     <main id="top">
       <section class="intro" aria-labelledby="page-title">
         <h1 id="page-title">Found by Fay</h1>
+      </section>
+
+      <section class="editorial-strip" aria-label="Found by Fay editorial note">
+        <div class="strip-art" aria-hidden="true">
+          <img src={headerImageUrl} alt="" />
+        </div>
+        <div class="strip-copy">
+          <p class="strip-kicker">Found by Fay's edit</p>
+          <p class="strip-title">a visual archive for beautiful things worth saving</p>
+        </div>
+        <div class="strip-aside" aria-hidden="true">
+          <span>Current mood</span>
+          <strong>marble, chartreuse, gold</strong>
+        </div>
       </section>
 
       <section class="gallery-shell" aria-labelledby="gallery-title">
