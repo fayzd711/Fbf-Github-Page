@@ -256,6 +256,18 @@ Changes:
 - Reduced the logo sizing with responsive `clamp()` constraints.
 - Added a gold hover frame and subtle lift for gallery cards using `#c4a35a`.
 
+## 2026-05-23 - Editorial Header Treatment
+
+The user liked the gold hover treatment but wanted it slightly thicker, and wanted the header to feel less like a plain image banner.
+
+Changes:
+
+- Increased the gallery hover frame from `2px` to `4px`.
+- Added a darker layered wash over the marbled header background.
+- Added a subtle gold hairline accent centered beneath the logo.
+- Reduced the centered logo again so it feels more like a signature.
+- Added a fine gold bottom border and soft shadow to the sticky header.
+
 ## Skill Created
 
 A local Codex skill was created for this website:

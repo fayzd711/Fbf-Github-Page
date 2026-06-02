@@ -2,6 +2,7 @@
   color-scheme: light;
   --ink: #111;
   --gold: #c4a35a;
+  --deep-gold: #8f7435;
   --muted: #666;
   --paper: #fff;
   --line: rgba(17, 17, 17, 0.12);
@@ -49,9 +50,11 @@ button {
   position: sticky;
   top: 0;
   z-index: 20;
-  height: 4.25rem;
+  height: 4.35rem;
   overflow: hidden;
   background: #252525;
+  border-bottom: 1px solid var(--deep-gold);
+  box-shadow: 0 6px 24px rgba(17, 17, 17, 0.18);
 }
 
 .header-art {
@@ -63,24 +66,50 @@ button {
   text-decoration: none;
 }
 
+.header-art::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  background:
+    radial-gradient(circle at center, rgba(37, 37, 37, 0.18), rgba(37, 37, 37, 0.58)),
+    linear-gradient(90deg, rgba(37, 37, 37, 0.68), rgba(37, 37, 37, 0.08) 42%, rgba(37, 37, 37, 0.08) 58%, rgba(37, 37, 37, 0.68));
+  pointer-events: none;
+}
+
+.header-art::after {
+  position: absolute;
+  left: 50%;
+  bottom: 0.42rem;
+  z-index: 2;
+  width: min(18rem, 54vw);
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(196, 163, 90, 0.92), transparent);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
 .header-background {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 46%;
+  transform: scale(1.04);
 }
 
 .header-logo {
   position: absolute;
+  z-index: 2;
   top: 50%;
   left: 50%;
-  width: clamp(8.5rem, 18vw, 13rem);
+  width: clamp(6.8rem, 14vw, 10.5rem);
   height: auto;
-  max-height: 54%;
+  max-height: 42%;
   object-fit: contain;
   transform: translate(-50%, -50%);
-  filter: drop-shadow(0 1px 8px rgba(0, 0, 0, 0.28));
+  filter: drop-shadow(0 1px 10px rgba(0, 0, 0, 0.48));
 }
 
 .intro {
@@ -126,7 +155,7 @@ p {
   width: 100%;
   display: inline-block;
   margin: 0 0 1rem;
-  padding: 2px;
+  padding: 4px;
   overflow: hidden;
   color: var(--ink);
   background: #e8e8e8;
@@ -157,7 +186,9 @@ p {
 
 .gallery-card:hover {
   background: var(--gold);
-  box-shadow: 0 8px 24px rgba(196, 163, 90, 0.32);
+  box-shadow:
+    0 0 0 1px rgba(143, 116, 53, 0.28),
+    0 10px 28px rgba(196, 163, 90, 0.34);
   transform: translateY(-1px);
 }
 
@@ -171,7 +202,7 @@ p {
 
 .gallery-card img {
   aspect-ratio: var(--ratio, auto);
-  border-radius: 12px;
+  border-radius: 10px;
   object-fit: cover;
 }
 
@@ -333,7 +364,12 @@ p {
 
 @media (max-width: 760px) {
   .site-header {
-    height: 4.25rem;
+    height: 4.35rem;
+  }
+
+  .header-logo {
+    width: clamp(6.3rem, 34vw, 8.8rem);
+    max-height: 38%;
   }
 
   .gallery-shell {
