@@ -281,6 +281,19 @@ Changes:
 - Kept the logo small and centered so the header reads as a branded signature strip.
 - Left the gallery masonry and gold hover treatment unchanged.
 
+## 2026-06-02 - Luxury Masthead Direction
+
+The user felt the previous header was still too simple and boxy, and referenced Chanel, Vogue, and SheerLuxe as the desired direction.
+
+Changes:
+
+- Removed the framed dark lockup, corner marks, and side rules.
+- Shifted the header to an ivory editorial masthead.
+- Kept the marbled artwork as a subtle low-opacity texture rather than a full dark banner.
+- Inverted the existing white logo asset in CSS so it reads as a black luxury-style wordmark.
+- Added small uppercase editorial side labels and thin gold hairlines around the centered wordmark.
+- Left the gallery, image hover treatment, and page content unchanged.
+
 ## Skill Created
 
 A local Codex skill was created for this website:
