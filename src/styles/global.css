@@ -3,6 +3,7 @@
   --ink: #111;
   --gold: #c4a35a;
   --deep-gold: #8f7435;
+  --soft-gold: rgba(230, 207, 153, 0.72);
   --muted: #666;
   --paper: #fff;
   --line: rgba(17, 17, 17, 0.12);
@@ -50,11 +51,11 @@ button {
   position: sticky;
   top: 0;
   z-index: 20;
-  height: 4.35rem;
+  height: 4.55rem;
   overflow: hidden;
   background: #252525;
-  border-bottom: 1px solid var(--deep-gold);
-  box-shadow: 0 6px 24px rgba(17, 17, 17, 0.18);
+  border-bottom: 1px solid rgba(196, 163, 90, 0.62);
+  box-shadow: 0 8px 28px rgba(17, 17, 17, 0.2);
 }
 
 .header-art {
@@ -72,20 +73,20 @@ button {
   z-index: 1;
   content: "";
   background:
-    radial-gradient(circle at center, rgba(37, 37, 37, 0.18), rgba(37, 37, 37, 0.58)),
-    linear-gradient(90deg, rgba(37, 37, 37, 0.68), rgba(37, 37, 37, 0.08) 42%, rgba(37, 37, 37, 0.08) 58%, rgba(37, 37, 37, 0.68));
+    radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1), rgba(37, 37, 37, 0.44) 56%, rgba(37, 37, 37, 0.78)),
+    linear-gradient(90deg, rgba(37, 37, 37, 0.82), rgba(37, 37, 37, 0.12) 39%, rgba(37, 37, 37, 0.12) 61%, rgba(37, 37, 37, 0.82));
   pointer-events: none;
 }
 
 .header-art::after {
   position: absolute;
   left: 50%;
-  bottom: 0.42rem;
+  bottom: 0.43rem;
   z-index: 2;
-  width: min(18rem, 54vw);
+  width: min(22rem, 62vw);
   height: 1px;
   content: "";
-  background: linear-gradient(90deg, transparent, rgba(196, 163, 90, 0.92), transparent);
+  background: linear-gradient(90deg, transparent, var(--soft-gold), rgba(255, 255, 255, 0.72), var(--soft-gold), transparent);
   transform: translateX(-50%);
   pointer-events: none;
 }
@@ -96,20 +97,92 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: center 46%;
-  transform: scale(1.04);
+  filter: saturate(0.82) contrast(1.08);
+  transform: scale(1.08);
 }
 
-.header-logo {
+.header-lockup {
   position: absolute;
   z-index: 2;
   top: 50%;
   left: 50%;
-  width: clamp(6.8rem, 14vw, 10.5rem);
-  height: auto;
-  max-height: 42%;
-  object-fit: contain;
+  display: grid;
+  place-items: center;
+  min-width: clamp(10rem, 21vw, 15rem);
+  height: 2.25rem;
+  padding: 0.52rem clamp(1.1rem, 2vw, 1.75rem) 0.48rem;
+  background:
+    linear-gradient(90deg, rgba(37, 37, 37, 0), rgba(37, 37, 37, 0.62) 18%, rgba(37, 37, 37, 0.72) 50%, rgba(37, 37, 37, 0.62) 82%, rgba(37, 37, 37, 0)),
+    rgba(37, 37, 37, 0.46);
+  border-top: 1px solid rgba(230, 207, 153, 0.55);
+  border-bottom: 1px solid rgba(230, 207, 153, 0.42);
   transform: translate(-50%, -50%);
-  filter: drop-shadow(0 1px 10px rgba(0, 0, 0, 0.48));
+}
+
+.header-logo {
+  display: block;
+  width: clamp(6.4rem, 12vw, 9rem);
+  height: auto;
+  max-height: 1.18rem;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 9px rgba(0, 0, 0, 0.58));
+}
+
+.header-corner {
+  position: absolute;
+  z-index: 2;
+  width: 1.05rem;
+  height: 1.05rem;
+  border-color: rgba(230, 207, 153, 0.76);
+  pointer-events: none;
+}
+
+.header-corner-top-left {
+  top: 0.72rem;
+  left: 0.9rem;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.header-corner-top-right {
+  top: 0.72rem;
+  right: 0.9rem;
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
+
+.header-corner-bottom-left {
+  bottom: 0.72rem;
+  left: 0.9rem;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+}
+
+.header-corner-bottom-right {
+  right: 0.9rem;
+  bottom: 0.72rem;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.header-rule {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: min(10rem, 20vw);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(230, 207, 153, 0.72));
+  pointer-events: none;
+}
+
+.header-rule-left {
+  left: max(2.25rem, 8vw);
+  transform: translateY(-50%);
+}
+
+.header-rule-right {
+  right: max(2.25rem, 8vw);
+  transform: translateY(-50%) scaleX(-1);
 }
 
 .intro {
@@ -367,9 +440,19 @@ p {
     height: 4.35rem;
   }
 
+  .header-corner,
+  .header-rule {
+    display: none;
+  }
+
+  .header-lockup {
+    min-width: clamp(9rem, 56vw, 12rem);
+    height: 2.15rem;
+  }
+
   .header-logo {
-    width: clamp(6.3rem, 34vw, 8.8rem);
-    max-height: 38%;
+    width: clamp(6.2rem, 42vw, 8rem);
+    max-height: 1.08rem;
   }
 
   .gallery-shell {

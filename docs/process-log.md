@@ -268,6 +268,19 @@ Changes:
 - Reduced the centered logo again so it feels more like a signature.
 - Added a fine gold bottom border and soft shadow to the sticky header.
 
+## 2026-06-02 - Header Elevation Pass
+
+The user wanted the header to feel more unique while keeping the gallery and page content unchanged.
+
+Changes:
+
+- Kept the same marbled background and white logo assets.
+- Added a darker layered vignette over the marble for more depth.
+- Added a centered translucent lockup plate behind the logo.
+- Added gold corner marks, side rules, and a brighter center hairline.
+- Kept the logo small and centered so the header reads as a branded signature strip.
+- Left the gallery masonry and gold hover treatment unchanged.
+
 ## Skill Created
 
 A local Codex skill was created for this website:
