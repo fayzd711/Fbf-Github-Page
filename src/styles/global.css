@@ -56,67 +56,41 @@ button {
   position: sticky;
   top: 0;
   z-index: 20;
-  overflow: hidden;
-  background: #111;
-  border-bottom: 1px solid rgba(17, 17, 17, 0.24);
-}
-
-.marble-masthead {
-  position: relative;
-  min-height: clamp(6.6rem, 13vw, 9.4rem);
   display: grid;
   place-items: center;
-  overflow: hidden;
-  padding: clamp(1rem, 2.5vw, 1.75rem);
-  background:
-    linear-gradient(90deg, rgba(255, 250, 240, 0.76), rgba(255, 250, 240, 0.24), rgba(255, 250, 240, 0.76)),
-    linear-gradient(180deg, rgba(255, 250, 240, 0.2), rgba(17, 17, 17, 0.08)),
-    url("/Fbf-Github-Page/assets/hand-marbled-header.png") center 46% / cover no-repeat,
-    #f4ead8;
-}
-
-.marble-masthead::before {
-  position: absolute;
-  inset: 0;
-  content: "";
-  background: radial-gradient(circle at center, rgba(255, 250, 240, 0.24), transparent 56%);
-  pointer-events: none;
-}
-
-.tagline-bar {
-  min-height: 2rem;
-  display: grid;
-  place-items: center;
-  padding: 0.38rem 1rem;
-  color: #fffaf0;
+  min-height: 3.7rem;
+  padding: 0.82rem 1rem 0.9rem;
   background: #111;
-}
-
-.tagline-bar p {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(0.82rem, 1.45vw, 1.08rem);
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
+  border-bottom: 1px solid rgba(196, 163, 90, 0.5);
+  box-shadow: 0 5px 18px rgba(17, 17, 17, 0.12);
 }
 
 .masthead-logo {
   position: relative;
-  z-index: 1;
   display: grid;
   align-items: center;
   justify-content: center;
   text-decoration: none;
 }
 
+.masthead-logo::after {
+  position: absolute;
+  left: 50%;
+  bottom: -0.55rem;
+  width: 0.28rem;
+  height: 0.28rem;
+  content: "";
+  background: var(--gold);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
 .header-logo {
   display: block;
-  width: clamp(12rem, 30vw, 24rem);
+  width: clamp(8.75rem, 17vw, 13.5rem);
   height: auto;
-  max-height: clamp(1.6rem, 3vw, 2.6rem);
+  max-height: 1.65rem;
   object-fit: contain;
-  filter: invert(1) drop-shadow(0 1px 0 rgba(255, 250, 240, 0.28));
 }
 
 .intro {
@@ -138,7 +112,7 @@ p {
 }
 
 .gallery-shell {
-  padding: 0.8rem 0.8rem 2rem;
+  padding: 0.65rem 0.8rem 2rem;
 }
 
 .gallery-heading {
@@ -370,13 +344,8 @@ p {
 }
 
 @media (max-width: 900px) {
-  .marble-masthead {
-    min-height: 6rem;
-  }
-
   .header-logo {
-    width: clamp(11.5rem, 60vw, 18rem);
-    max-height: 2rem;
+    width: clamp(8.5rem, 42vw, 12rem);
   }
 }
 
@@ -405,11 +374,6 @@ p {
 }
 
 @media (max-width: 420px) {
-  .tagline-bar p {
-    font-size: 0.76rem;
-    white-space: normal;
-  }
-
   .masonry {
     column-count: 1;
   }

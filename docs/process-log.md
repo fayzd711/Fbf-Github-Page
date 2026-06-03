@@ -330,6 +330,19 @@ Changes:
 - Moved `An editorial lens on style, interiors & atmosphere.` into a thin black bar directly below the masthead.
 - Left the gallery and gold hover outline unchanged.
 
+## 2026-06-03 - Quiet Luxury Header
+
+After reviewing the header direction, the user agreed to try a super-simple elevated treatment.
+
+Changes:
+
+- Removed the marbled masthead from the permanent top header.
+- Removed the tagline strip from the top of the page.
+- Replaced the brand area with a slim sticky black header.
+- Centered the white Found by Fay logo.
+- Added one tiny gold dot beneath the logo as the only accent.
+- Moved the gallery closer to the header so the images remain the focus.
+
 ## Skill Created
 
 A local Codex skill was created for this website:
