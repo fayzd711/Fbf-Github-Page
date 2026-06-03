@@ -305,6 +305,18 @@ Changes:
 - Preserved the existing masonry gallery structure and the thicker gold hover frame.
 - Kept the site one-page and image-led.
 
+## 2026-06-02 - Simplified Black Header and Marble Caption
+
+The user wanted to remove top categories/pages and simplify the brand area.
+
+Changes:
+
+- Removed the top navigation links: `Latest`, `Looks`, `Interiors`, `Archive`, `Notes`, and `Instagram`.
+- Removed the black ticker strip.
+- Set the top header to a plain black bar with the white Found by Fay logo centered.
+- Reworked the middle editorial strip into a marbled background panel with only the caption: `An editorial lens on style, interiors & atmosphere.`
+- Preserved the digital gallery and gold hover outline.
+
 ## Skill Created
 
 A local Codex skill was created for this website:
