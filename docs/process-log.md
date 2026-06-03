@@ -317,6 +317,19 @@ Changes:
 - Reworked the middle editorial strip into a marbled background panel with only the caption: `An editorial lens on style, interiors & atmosphere.`
 - Preserved the digital gallery and gold hover outline.
 
+## 2026-06-03 - Flipped Marble Masthead
+
+The user wanted the brand area flipped so the marble section returned to the top with a black logo, and the black bar moved below as a thin tagline strip.
+
+Changes:
+
+- Rebuilt the sticky header as two stacked bands.
+- Made the top band a larger marbled masthead using `hand-marbled-header.png`.
+- Rendered the existing white logo asset as black with CSS `filter: invert(1)`.
+- Removed the gold upper/lower logo lines.
+- Moved `An editorial lens on style, interiors & atmosphere.` into a thin black bar directly below the masthead.
+- Left the gallery and gold hover outline unchanged.
+
 ## Skill Created
 
 A local Codex skill was created for this website:
